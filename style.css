@@ -6,6 +6,11 @@
    box-sizing: border-box;
 }
 
+:root {
+   --backColor: #222635;
+   --frontColor: #313546;
+}
+
 body,
 html {
    height: 100vh;
@@ -18,12 +23,12 @@ html {
    display: grid;
    grid-template-columns: 1fr 4fr;
    grid-template-rows: 1fr 8fr;
+   overflow: hidden;
 }
 
 .container div {
-   padding: 15px;
+   padding: 10px;
    font-size: 32px;
-
    font-weight: bold;
    color: white;
 }
@@ -32,12 +37,29 @@ html {
    background-color: #313546;
    grid-column: 2 / -1;
    display: grid;
-   grid-template-columns: auto 1fr auto auto auto;
+   grid-template-columns: 1fr 2fr 1fr;
    align-items: center;
 }
 
-#notification {
+.header h3 {
+   justify-self: start;
+}
+
+#profile-buttons {
+   justify-self: end;
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+}
+
+#profile {
+   height: 42px;
+   fill: var(--backColor);
+}
+
+#notifications {
    height: 32px;
+   fill: var(--backColor);
 }
 
 #profile-img {
@@ -49,31 +71,46 @@ html {
    grid-row: 1 / 4;
    height: 100vh;
    display: grid;
-   grid-template-rows: 2fr 3fr 1fr;
+   grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .nav {
    display: grid;
-   grid-template-rows: repeat(7, 1fr);
+   grid-template-rows: repeat(5, 1fr);
 }
 .nav li {
    display: flex;
    align-items: center;
-   justify-self: start;
+   justify-self: stretch;
    font-size: 1.5rem;
    font-weight: 400;
+   gap: 20px;
 }
 
-svg {
-   fill: red;
+.nav li:hover {
+   background-color: #5d6480;
+   cursor: pointer;
+}
+.nav a {
+   text-decoration: none;
+   color: inherit;
+}
+
+.nav svg {
+   fill: var(--backColor);
    height: 30px;
 }
 
+#settings li {
+   grid-row: 5 / 6;
+}
+
 .content {
-   background-color: #222635;
+   background-color: var(--backColor);
    display: grid;
-   grid-template-columns: 3fr 1fr;
-   gap: 20px;
+   grid-template-columns: 3fr minmax(300px, 1fr);
+   gap: 15px;
+   overflow-y: auto;
 }
 
 .projects {
@@ -95,6 +132,7 @@ svg {
    text-align: center;
    display: grid;
    grid-template-columns: 1fr auto auto;
+   border-radius: 0.5rem;
 }
 
 .card p {
@@ -112,67 +150,37 @@ svg {
 .card-img {
    width: 100%;
    grid-column: 1 /-1;
+   border-radius: 0.5rem;
 }
 
-.card-icon {
-   height: 32px;
+.card svg {
+   fill: var(--backColor);
+   height: 42px;
 }
 
 .side-content {
    display: grid;
    grid-auto-flow: column;
    grid-template-rows: 1fr 1fr;
-   gap: 20px;
+   gap: 5px;
 }
 
 .side-content .card {
    background-color: #313546;
 }
+
 #search {
    width: 60%;
-
    outline: none;
+   color: #ffffff;
+   font-size: 1rem;
    background-color: #222635;
    border: none;
    padding: 10px;
    border-radius: 6px;
-}
-
-#search:focus {
-   width: 80%;
    transition: 500ms;
 }
 
-input[type="checkbox"] {
-   position: relative;
-   width: 40px;
-   height: 20px;
-   -webkit-appearance: none;
-   background: #c6c6c6;
-   outline: none;
-   border-radius: 10px;
-   box-shadow: inset 0 0 5px rgba(255, 0, 0, 0.2);
-   transition: 0.7s;
-}
-
-input:checked[type="checkbox"] {
-   background: #03a9f4;
-}
-
-input[type="checkbox"]:before {
-   content: "";
-   position: absolute;
-   width: 20px;
-   height: 20px;
-   border-radius: 10px;
-   top: 0;
-   left: 0;
-   background: #ffffff;
-   transform: scale(1.1);
-   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-   transition: 0.5s;
-}
-
-input:checked[type="checkbox"]:before {
-   left: 20px;
+#search:focus {
+   width: 100%;
 }

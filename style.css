@@ -7,9 +7,11 @@
 }
 
 :root {
+   --iconHover: #cbd5e1;
    --iconsColor: #64748b;
    --backColor: #0f172a;
    --frontColor: #1e293b;
+
    --text: #e2e8f0;
 }
 
@@ -55,30 +57,26 @@ html {
    justify-self: end;
    display: flex;
    align-items: center;
-   gap: 1rem;
+   gap: 2rem;
 }
 
 #profile-buttons svg {
-   height: 42px;
+   height: 36px;
    fill: var(--iconsColor);
    cursor: pointer;
    transition: 500ms;
 }
 
 #profile:hover {
-   fill: var(--backColor);
+   fill: var(--iconHover);
 }
 
 #notifications:hover {
-   fill: var(--backColor);
+   fill: var(--iconHover);
 }
 
 #add-button:hover {
    fill: green;
-}
-
-#profile-img {
-   height: 42px;
 }
 
 .sidebar {
@@ -107,6 +105,7 @@ html {
 .nav li:hover {
    background-color: var(--iconsColor);
    cursor: pointer;
+   color: var(--frontColor);
 }
 
 .nav li:hover :first-child {
@@ -179,7 +178,7 @@ html {
 }
 
 .card svg:hover {
-   fill: var(--backColor);
+   fill: var(--iconHover);
    transition: 300ms;
    cursor: pointer;
 }

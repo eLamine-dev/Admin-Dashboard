@@ -7,8 +7,10 @@
 }
 
 :root {
-   --backColor: #222635;
-   --frontColor: #313546;
+   --iconsColor: #64748b;
+   --backColor: #0f172a;
+   --frontColor: #1e293b;
+   --text: #e2e8f0;
 }
 
 body,
@@ -29,7 +31,11 @@ html {
 .container div {
    font-size: 32px;
    font-weight: bold;
-   color: white;
+   color: var(--text);
+}
+
+.logo {
+   padding-top: 2rem;
 }
 
 .header {
@@ -54,17 +60,17 @@ html {
 
 #profile-buttons svg {
    height: 42px;
-   fill: var(--backColor);
+   fill: var(--iconsColor);
    cursor: pointer;
    transition: 500ms;
 }
 
 #profile:hover {
-   fill: darkcyan;
+   fill: var(--backColor);
 }
 
 #notifications:hover {
-   fill: darkcyan;
+   fill: var(--backColor);
 }
 
 #add-button:hover {
@@ -76,7 +82,7 @@ html {
 }
 
 .sidebar {
-   background-color: #313546;
+   background-color: var(--frontColor);
    grid-row: 1 / 4;
    height: 100vh;
    display: grid;
@@ -99,8 +105,12 @@ html {
 }
 
 .nav li:hover {
-   background-color: #5d6480;
+   background-color: var(--iconsColor);
    cursor: pointer;
+}
+
+.nav li:hover :first-child {
+   fill: var(--frontColor);
 }
 .nav a {
    text-decoration: none;
@@ -108,7 +118,7 @@ html {
 }
 
 .nav svg {
-   fill: var(--backColor);
+   fill: var(--iconsColor);
    height: 30px;
 }
 
@@ -133,15 +143,12 @@ html {
 
 .projects p {
    font-size: 18px;
-
-   color: white;
    text-align: left;
 }
 
 .projects .card {
    padding: 15px;
-   background-color: #313546;
-   color: rgb(255, 255, 255);
+   background-color: var(--frontColor);
    text-align: center;
    display: grid;
    grid-template-rows: 1fr auto auto;
@@ -149,7 +156,6 @@ html {
 }
 
 .card p {
-   color: rgb(255, 255, 255);
    font-weight: normal;
    font-size: 14px;
    padding: 5px;
@@ -157,7 +163,6 @@ html {
 
 .card .title {
    grid-column: 1 /-1;
-
    font-size: 1.5rem;
    text-align: center;
 }
@@ -169,8 +174,14 @@ html {
 }
 
 .card svg {
-   fill: var(--backColor);
+   fill: var(--iconsColor);
    height: 42px;
+}
+
+.card svg:hover {
+   fill: var(--backColor);
+   transition: 300ms;
+   cursor: pointer;
 }
 
 .side-content {
@@ -183,14 +194,15 @@ html {
 .side-content .card {
    padding: 15px;
    background-color: var(--frontColor);
+   color: var(--text);
 }
 
 #search {
    width: 60%;
    outline: none;
-   color: #ffffff;
-   font-size: 1rem;
-   background-color: #222635;
+   color: var(--text);
+   font-size: 1.1rem;
+   background-color: var(--backColor);
    border: none;
    padding: 10px;
    border-radius: 6px;
@@ -198,5 +210,5 @@ html {
 }
 
 #search:focus {
-   width: 100%;
+   width: 80%;
 }

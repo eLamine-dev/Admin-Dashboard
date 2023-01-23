@@ -33,7 +33,7 @@ html {
 }
 
 .header {
-   background-color: #313546;
+   background-color: var(--frontColor);
    grid-column: 2 / -1;
    display: grid;
    grid-template-columns: 1fr 2fr 1fr;
@@ -144,7 +144,7 @@ html {
    color: rgb(255, 255, 255);
    text-align: center;
    display: grid;
-   grid-template-columns: 1fr auto auto;
+   grid-template-rows: 1fr auto auto;
    border-radius: 0.5rem;
 }
 
@@ -156,7 +156,9 @@ html {
 }
 
 .card .title {
-   font-size: 18px;
+   grid-column: 1 /-1;
+
+   font-size: 1.5rem;
    text-align: center;
 }
 

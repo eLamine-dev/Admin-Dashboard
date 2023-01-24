@@ -24,26 +24,28 @@ html {
    text-align: center;
    height: 100vh;
    display: grid;
-   grid-template-columns: 1fr 7fr 2fr;
+   grid-template-columns: 1fr 6fr;
    grid-template-rows: 1fr 9fr;
    overflow: hidden;
 }
 
 .container div {
-   font-size: 32px;
-   font-weight: bold;
    color: var(--text);
 }
 
-.logo {
-   padding-top: 2.2rem;
+.logo img {
+   padding-left: 5%;
+   padding-top: 12%;
+   display: flex;
+   justify-content: start;
+   width: 80%;
 }
 
 .header {
    background-color: var(--frontColor);
    grid-column: 2 / -1;
    display: grid;
-   grid-template-columns: 1fr 2fr 1fr;
+   grid-template-columns: 3fr 1fr;
    align-items: center;
    padding: 0 15px;
 }
@@ -56,11 +58,11 @@ html {
    justify-self: end;
    display: flex;
    align-items: center;
-   gap: 2rem;
+   gap: 1.5rem;
 }
 
 #profile-buttons svg {
-   height: 36px;
+   height: 32px;
    fill: var(--iconsColor);
    cursor: pointer;
    transition: 500ms;
@@ -75,7 +77,7 @@ html {
 }
 
 #add-button:hover {
-   fill: green;
+   fill: rgb(3, 65, 3);
 }
 
 .sidebar {
@@ -84,6 +86,7 @@ html {
    height: 100vh;
    display: grid;
    grid-template-rows: 1fr 2fr 2fr;
+   justify-items: stretch;
 }
 
 .nav {
@@ -93,22 +96,20 @@ html {
 .nav li {
    display: flex;
    align-items: center;
-   justify-self: stretch;
    font-size: 1.2rem;
+   padding-left: 5%;
    font-weight: 400;
    gap: 20px;
-   padding-left: 5%;
    transition: 300ms;
 }
 
 .nav li:hover {
    background-color: var(--iconsColor);
    cursor: pointer;
-   color: var(--frontColor);
 }
 
 .nav li:hover :first-child {
-   fill: var(--frontColor);
+   fill: var(--iconHover);
 }
 .nav a {
    text-decoration: none;
@@ -125,6 +126,10 @@ html {
 }
 
 .content {
+   display: grid;
+   grid-template-columns: 3fr minmax(320px, 1fr);
+   overflow-y: auto;
+   background-color: var(--backColor);
    overflow-y: auto;
    -ms-overflow-style: none;
    scrollbar-width: none;
@@ -139,18 +144,17 @@ html {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
    gap: 15px;
-   overflow-y: auto;
-   background-color: var(--backColor);
 }
 
 .projects .card {
    padding: 15px;
    background-color: var(--frontColor);
    display: grid;
-   grid-template-rows: auto;
+   grid-template-rows: auto 1fr 1fr;
    border-radius: 0.5rem;
    transition: 0.3s;
    align-items: center;
+   justify-items: center;
 }
 
 .projects .card:hover {
@@ -179,25 +183,29 @@ html {
    grid-row: 1 / 2;
    border-radius: 0.5rem;
    opacity: 0.6;
+   object-fit: cover;
 }
 
 .card svg {
    fill: var(--iconsColor);
-   height: 42px;
+   height: 2.2rem;
 }
 
 .card svg:hover {
    fill: var(--iconHover);
-   transition: 300ms;
+   transition: 100ms;
    cursor: pointer;
 }
 
 .side-content {
-   grid-column: 3/4;
-   grid-row: 2/4;
-   display: grid;
-   grid-auto-flow: column;
-   grid-template-rows: 1fr 1fr;
+   padding: 15px 15px 15px 0;
+   position: sticky;
+   top: 1rem;
+   align-self: start;
+   display: flex;
+   flex-direction: column;
+   justify-items: stretch;
+   justify-content: space-between;
    gap: 15px;
    background-color: var(--backColor);
 }
@@ -210,7 +218,7 @@ html {
 }
 
 .stats {
-   border-radius: 1rem;
+   border-radius: 0.5rem;
    background-color: var(--frontColor);
    color: var(--text);
    display: flex;
@@ -229,8 +237,52 @@ html {
    text-align: center;
 }
 
+.stat {
+   padding: 5px 0;
+   border-top: var(--backColor) solid 0.01rem;
+}
+
+.stats :hover :nth-child(2) {
+   color: #f43f5e;
+   transition: 300ms;
+   cursor: pointer;
+}
+
+.linked-profiles {
+   border-radius: 0.5rem;
+   background-color: var(--frontColor);
+   color: var(--text);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+}
+
+.linked-profiles p {
+   font-weight: normal;
+   font-size: 1.2rem;
+   padding: 5px;
+}
+
+.profile img {
+   height: 42px;
+   transition: 500ms;
+}
+
+.profile img:hover {
+   transform: scale(1.2) rotate(720deg);
+}
+
+.profile {
+   padding: 1rem 0;
+   border-top: var(--backColor) solid 0.01rem;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+}
+
 #search {
-   width: 60%;
+   justify-self: center;
+   width: 50%;
    outline: none;
    color: var(--text);
    font-size: 1.1rem;
@@ -242,5 +294,9 @@ html {
 }
 
 #search:focus {
-   width: 80%;
+   width: 60%;
+}
+
+#today {
+   justify-self: end;
 }

@@ -147,7 +147,7 @@ html {
 }
 
 .projects .card {
-   padding: 7%;
+   padding: 5%;
    background-color: var(--frontColor);
    display: grid;
    grid-template-rows: 7fr 1fr 1fr;

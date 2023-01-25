@@ -115,7 +115,7 @@ html {
 }
 
 #projects-nav {
-   text-decoration-line: underline;
+   text-decoration: underline;
 }
 #projects-nav svg {
    fill: var(--iconHover);
